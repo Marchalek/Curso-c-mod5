@@ -12,6 +12,16 @@ namespace Course_mod5 {
             double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Produto p = new Produto(nome, preco);
+
+            Produto p2 = new Produto();
+
+            Produto p3 = new Produto() {
+                Nome = "Tv", 
+                Preco = 500.00, 
+                Quantidade = 20 
+            };
+
+
             Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
             Console.WriteLine();
