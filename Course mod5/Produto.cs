@@ -4,20 +4,20 @@ namespace Course_mod5 {
 
     internal class Produto {
         private string _nome;
-        private double _preco;
-        private int _quantidade;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
 
         public Produto() {
-            _quantidade = 0;
+            Quantidade = 0;
         }
 
         public Produto(string nome, double preco) : this() {
             _nome = nome;
-            _preco = preco;
+            Preco = preco;
         }
 
         public Produto(string nome, double preco, int quantidade) : this(nome, preco) {
-            _quantidade = quantidade;
+            Quantidade = quantidade;
         }
 
         public String Nome {
@@ -29,32 +29,24 @@ namespace Course_mod5 {
             }
         }
 
-        public double Preco {
-            get { return _preco; }
-        }
-
-        public int Quantidade {
-            get { return _quantidade; }
-        }
-
         public double ValorTotalEmEstoque() {
-            return _preco * _quantidade;
+            return Preco * Quantidade;
         }
 
         public void AdicionarProdutos(int quantidade) {
-            _quantidade += quantidade;
+            Quantidade += quantidade;
         }
 
         public void RemoverProdutos(int quantidade) {
-            _quantidade -= quantidade;
+            Quantidade -= quantidade;
         }
 
         public override string ToString() {
             return _nome
             + ", $ "
-            + _preco.ToString("F2", CultureInfo.InvariantCulture)
+            + Preco.ToString("F2", CultureInfo.InvariantCulture)
             + ", "
-            + _quantidade
+            + Quantidade
             + " unidades, Total: $ "
             + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
