@@ -6,12 +6,16 @@ namespace Course_mod5 {
         public int Quantidade;
 
         public Produto() {
-
+            Quantidade = 0;
         }
 
-        public Produto(string nome, double preco) {
+        public Produto(string nome, double preco) : this() {
             Nome = nome;
             Preco = preco;
+        }
+
+        public Produto(string nome, double preco, int quantidade) : this(nome,preco) {
+            Quantidade= quantidade;
         }
 
         public double ValorTotalEmEstoque() {
