@@ -1,6 +1,8 @@
 ﻿using System.Globalization;
+
 namespace Course_mod5 {
-    class Produto {
+
+    internal class Produto {
         private string _nome;
         private double _preco;
         private int _quantidade;
@@ -18,23 +20,21 @@ namespace Course_mod5 {
             _quantidade = quantidade;
         }
 
-        public string GetNome() {
-            return this._nome;
-        }
-
-        public void SetNome(string nome) {
-            if (nome != null && nome.Length > 1) {
-                this._nome = nome;
+        public String Nome {
+            get { return _nome; }
+            set {
+                if (value != null && value.Length > 1) {
+                    this._nome = value;
+                }
             }
-
         }
 
-        public double GetPreco() {
-            return this._preco;
+        public double Preco {
+            get { return _preco; }
         }
 
-        public int GetQuantidade() {
-            return this._quantidade;
+        public int Quantidade {
+            get { return _quantidade; }
         }
 
         public double ValorTotalEmEstoque() {

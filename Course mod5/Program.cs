@@ -1,12 +1,11 @@
-﻿using System;
-using System.Globalization;
-namespace Course_mod5 {
-    class Program {
-        static void Main(string[] args) {
+﻿namespace Course_mod5 {
 
+    internal class Program {
+
+        private static void Main(string[] args) {
             Produto p = new Produto("TV", 500.00, 10);
 
-            p.SetNome("T");
+            p.Nome = "tv 4lk";
 
             Console.WriteLine(p);
         }
